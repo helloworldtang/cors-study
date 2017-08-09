@@ -1,3 +1,4 @@
+CORS（跨域资源共享，Cross-Origin Resource Sharing）
 
 ## CORS问题小结 ##
 CORS问题的起源是源于对用户的保护措施，即浏览器不允许一个域名下ajax请求另一个源的rest请求
@@ -7,7 +8,7 @@ CORS问题的起源是源于对用户的保护措施，即浏览器不允许一�
 
 有点绕,说的简单点就是浏览器限制脚本只能和同协议、同域名、同端口的脚本进行交互。
 
-JSONP就是为了解决这一问题的,JSONP是英文JSON with Padding的缩写,是一个非官方的协议。
+JSONP（Javascript Object Notation With Padding）就是为了解决这一问题的,JSONP是英文JSON with Padding的缩写,是一个非官方的协议。
 
 他允许服务端生成script tags返回值客户端,通过JavaScript callback的形式来实现站点访问。
 
