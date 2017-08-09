@@ -7,28 +7,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Index</title>
-
+    <title>CORS Solution summary </title>
+    <link rel="stylesheet"
+          th:href="@{/css/bootstrap.min.css}"
+          href="../static/css/bootstrap.min.css">
 </head>
-<body>
-<label for="content">Content:</label>
-<div id="content" style="width: 200px;;height: 500px"></div>
-<div>
-    <button id="native-not-cors">native-not-cors</button>
-    <button id="native=cors">Direct request</button>
-    <button id="jsonp">jsonp</button>
-    <button id="server-allow-cors">server-allow-cors</button>
+<body class="container">
+<div class="panel panel panel-success" style="margin-top: 10%;">
+    <div class="panel panel-heading">
+        <label for="content">Response Data:</label>
+    </div>
+    <div id="content" class="panel panel-body"></div>
+</div>
+<div class="list-group">
+    <div class="list-group-item">
+        <button id="native-not-cors" class="btn btn-lg btn-primary">not-cors</button>
+        <button id="cors-error-info" class="btn btn-lg btn-warning">Click find cors error info</button>
+    </div>
+
+    <div class="list-group-item">
+        <button id="native-allow-cors" class="btn btn-lg btn-success">allow-cors-use-CorsRegistry</button>
+        <button id="native-allow-cors-Use-CrossOrigin" class="btn btn-lg btn-success">
+            allow-cors-use-CrossOrigin
+        </button>
+    </div>
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">
+            JSONP需要服务器端和客户端同时支持
+        </h4>
+        <div class="list-group-item-text">
+            <button id="native-jsonp-scene1-cors" class="btn btn-lg btn-warning">jsonp-scene1-cors</button>
+            <button id="native-jsonp-scene2-cors" class="btn btn-lg btn-warning">jsonp-scene2-cors</button>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">
+            JSONP需要服务器端和客户端同时支持
+        </h4>
+        <div class="list-group-item-info">
+            <button id="native-jsonp-AbstractJsonpResponseBodyAdvice-ResponseBody" class="btn btn-lg btn-info">
+                Spring3.0 jsonp-AbstractJsonpResponseBodyAdvice-ResponseBody
+            </button>
+            <p></p>
+            <button id="native-jsonp-AbstractJsonpResponseBodyAdvice-ResponseEntity" class="btn btn-lg btn-info">
+                Spring3.0 jsonp-AbstractJsonpResponseBodyAdvice-ResponseEntity
+            </button>
+        </div>
+    </div>
+
 </div>
 
 <script src="../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
 <script type="text/javascript">
+
     $("#native-not-cors").click(function () {
-        getValue("http://localhost/user/1");
+        getValue("/user/1");
     });
+
+    $("#cors-error-info").click(function () {
+        getValue("http://localhost:8080/jsonp/scene1/user/1");
+    });
+
+
+    $("#native-allow-cors").click(function () {
+        getValue("http://localhost:8081/user/1");
+    });
+
+    $("#native-allow-cors-Use-CrossOrigin").click(function () {
+        getValue("http://localhost:8080/blog/1");
+    });
+
+
+    $("#native-jsonp-scene1-cors").click(function () {
+        var url = "http://localhost:8080/jsonp/scene1/user/1";
+        getWithJsonp(url);
+    });
+
+    $("#native-jsonp-scene2-cors").click(function () {
+        var url = "http://localhost:8080/jsonp/scene2/user/2";
+        getWithJsonp(url);
+    });
+
+
+    $("#native-jsonp-AbstractJsonpResponseBodyAdvice-ResponseBody").click(function () {
+        var url = "http://localhost:8030/user/1/ResponseBody";
+        getWithJsonp(url);
+    });
+
+    $("#native-jsonp-AbstractJsonpResponseBodyAdvice-ResponseEntity").click(function () {
+        var url = "http://localhost:8030/user/2/ResponseEntity";
+        getWithJsonp(url);
+    });
+
+    function getWithJsonp(url) {
+        $.ajax({
+            url: url,
+            // The name of the callback parameter, as specified by the YQL service
+            jsonp: "callback",
+            // Tell jQuery we're expecting JSONP
+            dataType: "jsonp",
+            data: {
+                'time': new Date().getTime()
+            },
+            // Work with the response
+            success: function (response) {
+                $("#content").html(url + "\n" + JSON.stringify(response)); // server response
+            }
+        });
+    }
 
     function getValue(url) {
         $.get(url, function (result) {
-            $("#content").html(url + result);
+            $("#content").html(url + JSON.stringify(result));
         });
     }
 

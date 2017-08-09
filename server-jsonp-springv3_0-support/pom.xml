@@ -8,19 +8,18 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>client-third</artifactId>
-    <name>client-third</name>
+    <artifactId>server-jsonp-springv3_0-support</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>jsonp-springv3.0-support</name>
     <description>Demo project for Spring Boot</description>
+
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
