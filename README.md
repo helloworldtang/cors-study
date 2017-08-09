@@ -64,7 +64,7 @@ server-jsonp-springv3_0-support：Spring3.0中CORS的解决方案：AbstractJson
 client-third：这个模块的会访问上面这个Module的服务
 
 
-
+上面四个服务启动后，在浏览器中打开http://localhost 就可以看到测试上面所叙场景的Button了
 
 
 
