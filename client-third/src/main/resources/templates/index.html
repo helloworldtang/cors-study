@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Index</title>
+
+</head>
+<body>
+<label for="content">Content:</label>
+<div id="content" style="width: 200px;;height: 500px"></div>
+<div>
+    <button id="native-not-cors">native-not-cors</button>
+    <button id="native=cors">Direct request</button>
+    <button id="jsonp">jsonp</button>
+    <button id="server-allow-cors">server-allow-cors</button>
+</div>
+
+<script src="../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script type="text/javascript">
+    $("#native-not-cors").click(function () {
+        getValue("http://localhost/user/1");
+    });
+
+    function getValue(url) {
+        $.get(url, function (result) {
+            $("#content").html(url + result);
+        });
+    }
+
+
+</script>
+
+</body>
+</html>
