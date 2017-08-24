@@ -1,12 +1,19 @@
 CORS（跨域资源共享，Cross-Origin Resource Sharing）
 
 ## CORS问题小结 ##
-CORS问题的起源是源于对用户的保护措施，即浏览器不允许一个域名下ajax请求另一个源的rest请求
+CORS问题的起源是源于对用户的保护措施，为了防止某域名下的接口被其他域名下的网页非法调用，
+即浏览器不允许一个域名下ajax请求另一个源的rest请求
 
 
 基于安全的原因,浏览器是存在同源策略机制的,同源策略阻止从一个源加载的文档或脚本获取或设置另一个源加载额文档的属性。
 
 有点绕,说的简单点就是浏览器限制脚本只能和同协议、同域名、同端口的脚本进行交互。
+
+
+解决跨域问题常用的解决方案有两个：    
+JSONP：利用script标签可跨域的特点，在跨域脚本中可以直接回调当前脚本的函数。    
+CORS：服务器设置HTTP响应头中Access-Control-Allow-Origin值，解除跨域限制。    
+但是这两个跨域方案都存在一个致命的缺陷，严重依赖后端的协助。   
 
 JSONP（Javascript Object Notation With Padding）就是为了解决这一问题的,JSONP是英文JSON with Padding的缩写,是一个非官方的协议。
 
