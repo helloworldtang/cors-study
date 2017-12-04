@@ -93,17 +93,17 @@ header("Access-Control-Allow-Origin: *"); # 跨域处理
 如果需要指定某域名才允许跨域访问，只需把Access-Control-Allow-Origin:*改为Access-Control-Allow-Origin:允许的域名
 
 
-### Model简介： ###
-server-cors-registry：最新的解决方案。在WebMvcConfigurerAdapter中配置。需要先启动，其它Module会依赖这个
+### Micro-Service简介： 
+server-cors-registry：最新的解决方案。在WebMvcConfigurerAdapter中配置。需要先启动，其它Service会依赖这个
 
 server-jsonp-support：@CrossOrigin和JSONP来解决跨域问题
 
 server-jsonp-springv3_0-support：Spring3.0中CORS的解决方案：AbstractJsonpResponseBodyAdvice
 
-client-third：这个模块的会访问上面这个Module的服务
+client-third：这个模块的会访问上面这个Module提供的服务
 
-
-上面四个服务启动后，在浏览器中打开http://localhost 就可以看到测试上面所叙场景的Button了
+## Usage
+依次启动上面的四个服务启动后，在浏览器中打开http://localhost 就可以看到测试上面所叙场景的Button了
 
 
 
