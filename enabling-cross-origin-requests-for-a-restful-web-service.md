@@ -12,7 +12,7 @@
 This guide walks you through the process of creating a "hello world" [RESTful web service](https://spring.io/understanding/REST) with Spring that includes headers for [Cross-Origin Resource Sharing (CORS)](https://spring.io/understanding/CORS) in the response. You will find more information about Spring CORS support in this [blog post](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework).
 本入门教程将向您介绍使用Spring创建一个“hello world”的[RESTful风格的web 服务](https://spring.io/understanding/REST) ，这个服务的响应头信息包含了 [Cross-Origin Resource Sharing (CORS)](https://spring.io/understanding/CORS)。您还可以在博客[blog post](https://spring.io/blog/2015/06/08/cors-support-in-spring-framework)中找到更多关于Spring CORS的信息。
 ## What you’ll build
-##你将创建一个什么样的服务
+## 将创建一个什么样的服务
 
 You’ll build a service that will accept HTTP GET requests at:
 您将构建一个接受HTTP GET请求的服务:
@@ -209,7 +209,7 @@ The [Spring Boot Maven plugin](https://github.com/spring-projects/spring-boot/tr
 - Read how to work with this guide in [IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea).
 - 阅读如何与这个入门教程一起使用 [IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea)。
 ## Create a resource representation class 
-## 创建一个资源表示类
+## 创建一个代表一个资源的类
 
 Now that you’ve set up the project and build system, you can create your web service.
 现在您已经建立了项目和构建系统，您可以创建您的web服务。
@@ -507,48 +507,29 @@ If the service response includes the CORS headers, then the ID and content will 
 如果服务响应包含了CORS头信息，那么ID和content将被呈现到页面中。但是如果缺少了CORS的头信息(或者对客户端不够定义)，那么浏览器将会导致请求失败，而这些值将不会被呈现到DOM中:
 ![如果响应中缺少CORS标头，则浏览器将会失败。没有数据将被呈现到DOM中。](https://spring.io/guides/gs/rest-service-cors/images/hello_fail.png)
 。
-## Summary
 ## 小结
 
-Congratulations! You’ve just developed a RESTful web service including Cross-Origin Resource Sharing with Spring.
 恭喜!您刚刚开发了一个基于Spring并且支持跨域资源共享的RESTful风格web服务。
-## See Also
-## 另请参阅
+## 参阅
 
 The following guides may also be helpful:
 以下的入门教程可能也有帮助:
-- [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 - [构建一个RESTful风格的Web服务](https://spring.io/guides/gs/rest-service/)
-- [Building a Hypermedia-Driven RESTful Web Service](https://spring.io/guides/gs/rest-hateoas/)
 - [构建一个超文本驱动的RESTful风格的Web服务](https://spring.io/guides/gs/rest-hateoas/)
-- [Creating API Documentation with Restdocs](https://spring.io/guides/gs/testing-restdocs/)
- [使用Restdocs创建一个API文档](https://spring.io/guides/gs/testing-restdocs/)
-- [Accessing GemFire Data with REST](https://spring.io/guides/gs/accessing-gemfire-data-rest/)
+- [使用Restdocs创建一个API文档](https://spring.io/guides/gs/testing-restdocs/)
 - [基于REST方式访问GemFire Data](https://spring.io/guides/gs/accessing-gemfire-data-rest/)
 - [基于REST方式访问 MongoDB Data](https://spring.io/guides/gs/accessing-mongodb-data-rest/)
-- [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
 - [基于MySQL的数据访问](https://spring.io/guides/gs/accessing-data-mysql/)
-- [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/)
--  [基于REST方式的JPA 数据访问](https://spring.io/guides/gs/accessing-data-rest/)
-- [Accessing Neo4j Data with REST](https://spring.io/guides/gs/accessing-neo4j-data-rest/)
+- [基于REST方式的JPA 数据访问](https://spring.io/guides/gs/accessing-data-rest/)
 - [基于REST方式的 Neo4j 数据访问](https://spring.io/guides/gs/accessing-neo4j-data-rest/)
-- [Consuming a RESTful Web Service](https://spring.io/guides/gs/consuming-rest/)
 - [调用RESTful风格的Web服务](https://spring.io/guides/gs/consuming-rest/)
-- [Consuming a RESTful Web Service with AngularJS](https://spring.io/guides/gs/consuming-rest-angularjs/)
 - [基于AngularJS访问一个 RESTful风格Web服务](https://spring.io/guides/gs/consuming-rest-angularjs/)
-- [Consuming a RESTful Web Service with jQuery](https://spring.io/guides/gs/consuming-rest-jquery/)
 - [基于 jQuery调用一个RESTful风格的Web服务](https://spring.io/guides/gs/consuming-rest-jquery/)
-- [Consuming a RESTful Web Service with rest.js](https://spring.io/guides/gs/consuming-rest-restjs/)
 - [基于rest.js调用一个RESTful风格的Web服务](https://spring.io/guides/gs/consuming-rest-restjs/)
-- [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
 - [保护Web应用程序](https://spring.io/guides/gs/securing-web/)
-- [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 - [使用Spring构建REST服务](https://spring.io/guides/tutorials/bookmarks/)
-- [React.js and Spring Data REST](https://spring.io/guides/tutorials/react-and-spring-data-rest/)
 - [React.js和Spring Data REST](https://spring.io/guides/tutorials/react-and-spring-data-rest/)
-- [Building an Application with Spring Boot](https://spring.io/guides/gs/spring-boot/)
 - [使用Spring Boo构建应用程序](https://spring.io/guides/gs/spring-boot/)
 
-Want to write a new guide or contribute to an existing one? Check out our [contribution guidelines](https://github.com/spring-guides/getting-started-guides/wiki).
-想要写一本新的入门教程或对现有的入门教程做出贡献?看看我们的 [共创入门教程](https://github.com/spring-guides/getting-started-guides/wiki)。
+想要写一本新的入门教程或对现有的入门教程做出贡献?看看我们的 [共创相关的入门教程](https://github.com/spring-guides/getting-started-guides/wiki)。
 > 本文由spring4all.com翻译小分队创作，采用[知识共享-署名-非商业性使用-相同方式共享 4.0 国际 许可](http://creativecommons.org/licenses/by-nc-sa/4.0/) 协议进行许可。
