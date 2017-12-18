@@ -510,9 +510,9 @@ If the service response includes the CORS headers, then the ID and content will 
 ## 小结
 
 恭喜!您刚刚开发了一个基于Spring并且支持跨域资源共享的RESTful风格web服务。
+
 ## 参阅
 
-The following guides may also be helpful:
 以下的入门教程可能也有帮助:
 - [构建一个RESTful风格的Web服务](https://spring.io/guides/gs/rest-service/)
 - [构建一个超文本驱动的RESTful风格的Web服务](https://spring.io/guides/gs/rest-hateoas/)
